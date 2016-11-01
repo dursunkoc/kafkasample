@@ -20,8 +20,8 @@ public class ProducerAppSample {
         prop.put("linger.ms", "10000");
 
         try (final KafkaProducer<String, String> myProducer = new KafkaProducer<>(prop)) {
-            for (int i = 0; i < 150; i++) {
-                final ProducerRecord<String, String> record = new ProducerRecord<String, String>("benim_basiligim",
+            for (int i = 0; i < 5; i++) {
+                final ProducerRecord<String, String> record = new ProducerRecord<String, String>("my_topic",
                         Integer.toString(i), "My Message " + i);
                 myProducer.send(record);
             }
